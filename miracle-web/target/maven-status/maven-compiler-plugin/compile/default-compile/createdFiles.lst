@@ -1,3 +1,4 @@
+com\liyao\miracle\department\controller\DepartmentController.class
+com\liyao\miracle\department\model\DepartmentQueryParams.class
 com\liyao\miracle\Bootstrap.class
-com\liyao\miracle\test\controller\TestController.class
-com\liyao\miracle\project\controller\ProjectController.class
+com\liyao\miracle\user\UserController.class

@@ -1,2 +1,5 @@
 .idea
 log
+miracle-service/target
+miracle-web/target
+pom-xml-flattened
