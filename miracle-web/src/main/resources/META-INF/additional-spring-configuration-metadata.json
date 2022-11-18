@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "logPath",
+      "type": "java.lang.String",
+      "description": "Description for logPath."
+    }
+  ]
+}

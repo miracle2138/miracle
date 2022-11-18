@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: dev
+
+logPath: log
+logFileName: server-%d{yyyy-MM-dd-HH-mm}.%i.log
+errorFileName: error-%d{yyyy-MM-dd-HH-mm}.%i.log
