@@ -22,7 +22,6 @@
         </filter>
     </appender>
 
-
     <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>ERROR</level>
