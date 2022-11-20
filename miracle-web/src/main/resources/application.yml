@@ -1,7 +1,8 @@
 spring:
   profiles:
     active: dev
-
+  application:
+    name: liyao.test.string
 logPath: log
 logFileName: server-%d{yyyy-MM-dd-HH-mm}.%i.log
 errorFileName: error-%d{yyyy-MM-dd-HH-mm}.%i.log
