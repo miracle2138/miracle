@@ -13,3 +13,5 @@ nacos:
   config:
     server-addr: 127.0.0.1:8848
     namespace: 8b6860a9-092d-40a3-94c0-2f07b9c51f82
+  discovery:
+    server-addr: 127.0.0.1:8848

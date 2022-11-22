@@ -2,6 +2,8 @@ package com.liyao.miracle.nacosDemo.model;
 
 import com.alibaba.nacos.api.config.annotation.NacosConfigurationProperties;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -19,11 +21,22 @@ public class ConfigModel {
 
     private int intKey;
 
+    private ConfigModelInner innerConfig;
+
     @Override
     public String toString() {
-        return "ConfigModel{" +
-                "stringKey='" + stringKey + '\'' +
-                ", intKey='" + intKey + '\'' +
-                '}';
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.JSON_STYLE);
+    }
+
+    @Data
+    static class ConfigModelInner {
+        private String nameKey;
+
+        @Override
+        public String toString() {
+            return ReflectionToStringBuilder.toString(this, ToStringStyle.JSON_STYLE);
+        }
     }
 }
+
+

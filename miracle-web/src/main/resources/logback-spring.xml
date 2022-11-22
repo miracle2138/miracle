@@ -32,8 +32,8 @@
             <!-- rollover daily -->
             <fileNamePattern>${logPath}/${logFileName}</fileNamePattern>
             <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
-            <maxFileSize>100MB</maxFileSize>
-            <maxHistory>30</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+            <maxHistory>7</maxHistory>
             <totalSizeCap>20GB</totalSizeCap>
         </rollingPolicy>
         <encoder>
@@ -46,8 +46,8 @@
             <!-- rollover daily -->
             <fileNamePattern>${logPath}/${errorFileName}</fileNamePattern>
             <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
-            <maxFileSize>100MB</maxFileSize>
-            <maxHistory>30</maxHistory>
+            <maxFileSize>1GB</maxFileSize>
+            <maxHistory>7</maxHistory>
             <totalSizeCap>20GB</totalSizeCap>
         </rollingPolicy>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">

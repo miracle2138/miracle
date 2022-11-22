@@ -1,8 +1,10 @@
 package com.liyao.miracle.nacosDemo.controller;
 
 import com.alibaba.nacos.api.config.annotation.NacosValue;
+import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
 import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySources;
+import com.liyao.miracle.nacosDemo.config.ConfigGetByServiceDemo;
 import com.liyao.miracle.nacosDemo.model.ConfigModel;
 
 import org.slf4j.Logger;
@@ -19,9 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 @NacosPropertySources({
         @NacosPropertySource(dataId = "liyao.test.string2", groupId = "app1", autoRefreshed = true),
 })
-public class NController {
+public class NacosDemoController {
 
-    private static final Logger logger = LoggerFactory.getLogger(NController.class);
+    private static final Logger logger = LoggerFactory.getLogger(NacosDemoController.class);
 
     @NacosValue(value = "${key1:key1D}", autoRefreshed = true)
     private String value;
@@ -35,6 +37,9 @@ public class NController {
     @Autowired
     private ConfigModel configModel;
 
+    @Autowired
+    private ConfigGetByServiceDemo configGetByServiceDemo;
+
     @RequestMapping("/n/h")
     public String h() {
         logger.info("value: {}", value);
@@ -42,6 +47,12 @@ public class NController {
         logger.info("value2: {}", value2);
 
         logger.info("config model: {}", configModel);
+        return "";
+    }
+
+    @RequestMapping("/n/h1")
+    public String h1() throws NacosException {
+        configGetByServiceDemo.test();
         return "";
     }
 }
