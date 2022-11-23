@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: miracle-service-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+server:
+  port: 8081
+
+logPath: log
+logFileName: server-%d{yyyy-MM-dd-HH-mm}.%i.log
+errorFileName: error-%d{yyyy-MM-dd-HH-mm}.%i.log

@@ -2,4 +2,6 @@
 log
 miracle-service/target
 miracle-web/target
+miracle-service-consumer/target
+miracle-service-provider/target
 pom-xml-flattened

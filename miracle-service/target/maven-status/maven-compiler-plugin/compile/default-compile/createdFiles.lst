@@ -1,11 +1,11 @@
+com\liyao\miracle\config\MyBatisPlusConfig.class
+com\liyao\miracle\user\dao\UserMapper.class
 com\liyao\miracle\user\dao\UserFullInfo.class
 com\liyao\miracle\user\service\IUserService.class
-com\liyao\miracle\config\MyBatisPlusConfig.class
 com\liyao\miracle\config\MyMetaObjectHandler.class
 com\liyao\miracle\user\service\impl\UserServiceImpl.class
 com\liyao\miracle\department\dao\DepartmentMapper.class
 com\liyao\miracle\department\service\impl\DepartmentServiceImpl.class
 com\liyao\miracle\user\entity\User.class
 com\liyao\miracle\department\service\IDepartmentService.class
-com\liyao\miracle\user\dao\UserMapper.class
 com\liyao\miracle\department\entity\Department.class

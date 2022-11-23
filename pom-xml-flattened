@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.4.5</version>
+    <version>2.6.0</version>
     <relativePath></relativePath>
   </parent>
   <groupId>com.liyao</groupId>
@@ -22,10 +22,13 @@
   <modules>
     <module>miracle-service</module>
     <module>miracle-web</module>
+    <module>miracle-service-provider</module>
+    <module>miracle-service-consumer</module>
   </modules>
   <properties>
     <java.version>1.8</java.version>
     <revision>1.0-SNAPSHOT</revision>
+    <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
     <nacos-discovery-spring-boot.version>0.2.11</nacos-discovery-spring-boot.version>
     <mybatis-plus-boot.version.version>3.4.2</mybatis-plus-boot.version.version>
     <nacos-config-spring-boot.version>0.2.11</nacos-config-spring-boot.version>
@@ -34,9 +37,29 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql-connector-java.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.liyao</groupId>
         <artifactId>miracle-service</artifactId>
         <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        <version>${spring-cloud-alibaba.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.boot</groupId>
+        <artifactId>nacos-config-spring-boot-starter</artifactId>
+        <version>${nacos-config-spring-boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.boot</groupId>
+        <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+        <version>${nacos-discovery-spring-boot.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -56,16 +79,6 @@
       <groupId>com.baomidou</groupId>
       <artifactId>mybatis-plus-boot-starter</artifactId>
       <version>${mybatis-plus-boot.version.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba.boot</groupId>
-      <artifactId>nacos-config-spring-boot-starter</artifactId>
-      <version>${nacos-config-spring-boot.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba.boot</groupId>
-      <artifactId>nacos-discovery-spring-boot-starter</artifactId>
-      <version>${nacos-discovery-spring-boot.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
