@@ -8,10 +8,9 @@
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    
-    <name>miracle-service-provider</name>
-    <artifactId>miracle-service-consumer</artifactId>
 
+    <artifactId>miracle-cloud-web</artifactId>
+    <name>miracle-cloud-web</name>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,24 +19,20 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.liyao</groupId>
-            <artifactId>miracle-service</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <groupId>com.liyao</groupId>
+            <artifactId>miracle-service</artifactId>
         </dependency>
     </dependencies>
 
@@ -48,7 +43,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>
-                        com.liyao.miracleserviceconsumer.MiracleServiceConsumerApplication
+                        com.liyao.miracleserviceprovider.MiracleServiceProviderApplication
                     </mainClass>
                 </configuration>
             </plugin>

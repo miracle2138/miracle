@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: miracle-cloud-web
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        group: app1
+        namespace: 8b6860a9-092d-40a3-94c0-2f07b9c51f82
+        file-extension: yaml
+        extension-configs:
+          - data-id: ext_0.yaml
+            group: app1
+            namespace: 8b6860a9-092d-40a3-94c0-2f07b9c51f82
+          - data-id: ext_1.yaml
+            group: app1
+            namespace: 8b6860a9-092d-40a3-94c0-2f07b9c51f82

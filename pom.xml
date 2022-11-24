@@ -14,10 +14,11 @@
         <module>miracle-web</module>
         <module>miracle-service-provider</module>
         <module>miracle-service-consumer</module>
+        <module>miracle-cloud-web</module>
+        <module>miracle-common</module>
     </modules>
 
     <name>miracle</name>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -28,13 +29,21 @@
     <properties>
         <revision>1.0-SNAPSHOT</revision>
         <java.version>1.8</java.version>
+
+        <spring-boot.version>2.6.0</spring-boot.version>
+        <spring-cloud.version>2021.0.0</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+
         <mybatis-plus-boot.version.version>3.4.2</mybatis-plus-boot.version.version>
         <mysql-connector-java.version>8.0.23</mysql-connector-java.version>
         <nacos-config-spring-boot.version>0.2.11</nacos-config-spring-boot.version>
         <nacos-discovery-spring-boot.version>0.2.11</nacos-discovery-spring-boot.version>
-        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -51,16 +60,8 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus-boot.version.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
+    <!--   Spring相关依赖管理 https://zhuanlan.zhihu.com/p/484975073?utm_id=0-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -70,13 +71,13 @@
             </dependency>
             <dependency>
                 <groupId>com.liyao</groupId>
-                <artifactId>miracle-service</artifactId>
+                <artifactId>miracle-common</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
+                <groupId>com.liyao</groupId>
+                <artifactId>miracle-service</artifactId>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.boot</groupId>
@@ -88,9 +89,22 @@
                 <artifactId>nacos-discovery-spring-boot-starter</artifactId>
                 <version>${nacos-discovery-spring-boot.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
     <build>
         <plugins>
             <plugin>

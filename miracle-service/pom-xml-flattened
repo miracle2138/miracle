@@ -17,6 +17,12 @@
       <url>https://www.apache.org/licenses/LICENSE-2.0</url>
     </license>
   </licenses>
+  <dependencies>
+    <dependency>
+      <groupId>com.liyao</groupId>
+      <artifactId>miracle-common</artifactId>
+    </dependency>
+  </dependencies>
   <build>
     <resources>
       <resource>

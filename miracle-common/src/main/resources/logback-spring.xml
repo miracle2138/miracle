@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property resource="application.yml"/>
+    <property name="LOG_HOME" value="log"/>
+    <property name="LOG_PATH" value="server-%d{yyyy-MM-dd}.%i.log"/>
+    <property name="ERROR_LOG_PATH" value="error-%d{yyyy-MM-dd}.%i.log"/>
+
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>ERROR</level>
@@ -30,7 +34,7 @@
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!-- rollover daily -->
-            <fileNamePattern>${logPath}/${logFileName}</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/${LOG_PATH}</fileNamePattern>
             <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
             <maxFileSize>1GB</maxFileSize>
             <maxHistory>7</maxHistory>
@@ -44,7 +48,7 @@
     <appender name="ROLLING_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!-- rollover daily -->
-            <fileNamePattern>${logPath}/${errorFileName}</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/${ERROR_LOG_PATH}</fileNamePattern>
             <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
             <maxFileSize>1GB</maxFileSize>
             <maxHistory>7</maxHistory>

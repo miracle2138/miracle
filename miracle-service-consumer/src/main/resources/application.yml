@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    include: log
   application:
     name: miracle-service-consumer
   cloud:
@@ -9,5 +11,5 @@ server:
   port: 8082
 
 logPath: log
-logFileName: server-%d{yyyy-MM-dd-HH-mm}.%i.log
-errorFileName: error-%d{yyyy-MM-dd-HH-mm}.%i.log
+logFileName: server-%d{yyyy-MM-dd}.%i.log
+errorFileName: error-%d{yyyy-MM-dd}.%i.log
