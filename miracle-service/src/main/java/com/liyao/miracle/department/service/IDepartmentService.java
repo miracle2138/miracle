@@ -10,4 +10,6 @@ import com.liyao.miracle.department.entity.Department;
  */
 public interface IDepartmentService extends IService<Department> {
     IPage<Department> pageQueryDepartments(long pageSize, long pageNum);
+
+    IPage<Department> pageQueryDepartmentsByParentId(long pageSize, long pageNum, Long parentId);
 }

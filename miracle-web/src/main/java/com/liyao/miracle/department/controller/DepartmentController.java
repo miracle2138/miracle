@@ -29,7 +29,7 @@ public class DepartmentController {
 
     @RequestMapping("/page")
     public String pageQuery(@RequestParam long pageNum, @RequestParam long pageSize) {
-        IPage<Department> page = departmentService.pageQueryDepartments(pageSize, pageNum);
+        IPage<Department> page = departmentService.pageQueryDepartmentsByParentId(pageSize, pageNum, 1L);
         logger.info("page: {}", page);
         return "";
     }

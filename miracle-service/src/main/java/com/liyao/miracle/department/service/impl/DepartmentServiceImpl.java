@@ -25,4 +25,10 @@ public class DepartmentServiceImpl extends ServiceImpl<DepartmentMapper, Departm
         IPage<Department> page = new Page<>(pageNum, pageSize);
         return departmentMapper.selectPage(page, null);
     }
+
+    @Override
+    public IPage<Department> pageQueryDepartmentsByParentId(long pageSize, long pageNum, Long parentId) {
+        IPage<Department> page = new Page<>(pageNum, pageSize);
+        return departmentMapper.pageQueryDepartments(page, parentId);
+    }
 }

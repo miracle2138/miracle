@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.liyao.miracle.plan.dao.PlanDao">
+    <select id="querySum"
+            resultType="com.liyao.miracle.plan.entity.Plan">
+        SELECT ID,
+               PLAN_NAME,
+               STATUS,
+               UPDATED_TIME,
+               IFNULL(SUM(AMOUNT), '0.0') AS amount
+        FROM plan
+        WHERE ID = 1
+        GROUP BY ID
+    </select>
+</mapper>

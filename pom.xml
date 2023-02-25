@@ -16,6 +16,8 @@
         <module>miracle-service-consumer</module>
         <module>miracle-cloud-web</module>
         <module>miracle-common</module>
+        <module>miracle-web-service</module>
+        <module>miracle-flowable</module>
     </modules>
 
     <name>miracle</name>
@@ -38,6 +40,14 @@
         <mysql-connector-java.version>8.0.23</mysql-connector-java.version>
         <nacos-config-spring-boot.version>0.2.11</nacos-config-spring-boot.version>
         <nacos-discovery-spring-boot.version>0.2.11</nacos-discovery-spring-boot.version>
+        <easyexcel.version>3.1.1</easyexcel.version>
+        <swagger.version>2.9.2</swagger.version>
+        <auth.jwt.version>4.2.1</auth.jwt.version>
+        <jaxws.version>3.2.7</jaxws.version>
+        <jackson.version>2.12.0</jackson.version>
+        <flowable-engine.version>6.6.0</flowable-engine.version>
+        <com.h2database.version>1.4.200</com.h2database.version>
+        <flowable-spring-boot-starter.version>6.6.0</flowable-spring-boot-starter.version>
     </properties>
     <dependencies>
         <dependency>
@@ -64,6 +74,21 @@
     <!--   Spring相关依赖管理 https://zhuanlan.zhihu.com/p/484975073?utm_id=0-->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -102,6 +127,46 @@
                 <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>${auth.jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+                <version>${jaxws.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-engine</artifactId>
+                <version>${flowable-engine.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${com.h2database.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-spring-boot-starter</artifactId>
+                <version>${flowable-spring-boot-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

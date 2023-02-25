@@ -1,0 +1,10 @@
+xxx-project
+    ├─xxx-web
+    │  └─src
+    ├─xxx-core
+    │  └─src
+    ├─xxx-sdk
+    │  └─src
+    ├─xxx-common
+    │  └─src
+    └─pom.xml
