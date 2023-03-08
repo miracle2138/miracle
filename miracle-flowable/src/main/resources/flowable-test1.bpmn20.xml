@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+        xmlns:flowable="http://flowable.org/bpmn"
+        xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        targetNamespace="Examples">
+    <process id="first_key" name="第一个流程" isExecutable="true">
+        <startEvent id="startEvent1" flowable:formFieldValidation="true"></startEvent>
+        <sequenceFlow id="sid-866DEB47-E7ED-4D18-BE73-EF8B4DC5AD17" sourceRef="startEvent1"
+                      targetRef="sid-D26719DB-E1FB-4940-ACEF-DACAC88DDE10">
+            <extensionElements>
+                <flowable:taskListener event="complete" class="com.liyao.MyTaskCreateListener"/>
+            </extensionElements>
+        </sequenceFlow>
+        <userTask id="sid-D26719DB-E1FB-4940-ACEF-DACAC88DDE10" name="第一个任务"
+                  flowable:formFieldValidation="true" flowable:assignee="ly"></userTask>
+        <sequenceFlow id="sid-969F97A6-308C-4B3A-8FF1-62A287F429B5"
+                      sourceRef="sid-A1A988D3-1731-4023-A246-8F9863E51166"
+                      targetRef="sid-EEDF8609-F279-4144-B325-D7B4ADF4AAC6"></sequenceFlow>
+        <userTask id="sid-A1A988D3-1731-4023-A246-8F9863E51166" name="第二个任务"
+                  flowable:formFieldValidation="true" flowable:assignee="lzy"></userTask>
+        <sequenceFlow id="sid-9574C81B-A678-4F81-94F2-822F7052C972"
+                      sourceRef="sid-D26719DB-E1FB-4940-ACEF-DACAC88DDE10"
+                      targetRef="sid-A1A988D3-1731-4023-A246-8F9863E51166">
+            <!--            <conditionExpression xsi:type="tFormalExpression">-->
+            <!--                <![CDATA[${order.price > 100 && order.price < 250}]]>-->
+            <!--            </conditionExpression>-->
+        </sequenceFlow>
+        <endEvent id="sid-EEDF8609-F279-4144-B325-D7B4ADF4AAC6"></endEvent>
+    </process>
+</definitions>

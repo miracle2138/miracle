@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: miracle-formula-web-test
+formula:
+  web:
+    api:
+      prefix: /api
+  xss:
+    enable: true

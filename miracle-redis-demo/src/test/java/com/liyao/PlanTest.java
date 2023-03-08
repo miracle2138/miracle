@@ -1,20 +1,18 @@
-package com.liyao.miracle;
+package com.liyao;
 
 import com.liyao.miracle.plan.dao.PlanDao;
 import com.liyao.miracle.plan.entity.Plan;
-
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * @Author 栗垚
- * @Date 2022/12/26
+ * @Date 2023/3/1
  */
 @Slf4j
-@SpringBootTest(classes = PlanTest.class)
+@SpringBootTest
 public class PlanTest {
 
     @Autowired

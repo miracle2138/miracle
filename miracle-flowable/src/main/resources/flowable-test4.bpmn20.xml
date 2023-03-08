@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:flowable="http://flowable.org/bpmn"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             typeLanguage="http://www.w3.org/2001/XMLSchema"
+             expressionLanguage="http://www.w3.org/1999/XPath"
+             targetNamespace="http://www.flowable.org/processdef"
+             exporter="Flowable Open Source Modeler" exporterVersion="6.8.0">
+    <process id="key4" name="第四个流程" isExecutable="true">
+        <documentation>仅用于测试</documentation>
+        <startEvent id="startEvent1" flowable:formFieldValidation="true"></startEvent>
+        <userTask id="sid-20CDAEA8-1847-47E6-A5C4-66452AEDB9B7" name="测试任务"
+                  flowable:formFieldValidation="true">
+            <extensionElements>
+                <flowable:taskListener event="create"
+                                       expression="${MyTaskListener}"></flowable:taskListener>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="sid-FA1E0F75-8908-460D-BE8E-B55F4D672716" sourceRef="startEvent1"
+                      targetRef="sid-20CDAEA8-1847-47E6-A5C4-66452AEDB9B7"></sequenceFlow>
+        <endEvent id="sid-51CA138C-E95A-46E1-9AFB-B592B3D692B8"></endEvent>
+        <sequenceFlow id="sid-B52FBC11-5304-41CE-9997-0B3CE84F5666"
+                      sourceRef="sid-20CDAEA8-1847-47E6-A5C4-66452AEDB9B7"
+                      targetRef="sid-51CA138C-E95A-46E1-9AFB-B592B3D692B8"></sequenceFlow>
+    </process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_key4">
+        <bpmndi:BPMNPlane bpmnElement="key4" id="BPMNPlane_key4">
+            <bpmndi:BPMNShape bpmnElement="startEvent1" id="BPMNShape_startEvent1">
+                <omgdc:Bounds height="30.0" width="30.0" x="74.99999776482589"
+                              y="159.99998641014176"></omgdc:Bounds>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="sid-20CDAEA8-1847-47E6-A5C4-66452AEDB9B7"
+                              id="BPMNShape_sid-20CDAEA8-1847-47E6-A5C4-66452AEDB9B7">
+                <omgdc:Bounds height="80.0" width="99.99999999999997" x="164.99999508261695"
+                              y="134.9999959766866"></omgdc:Bounds>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="sid-51CA138C-E95A-46E1-9AFB-B592B3D692B8"
+                              id="BPMNShape_sid-51CA138C-E95A-46E1-9AFB-B592B3D692B8">
+                <omgdc:Bounds height="28.0" width="28.0" x="319.9999904632571"
+                              y="160.99999117851294"></omgdc:Bounds>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge bpmnElement="sid-FA1E0F75-8908-460D-BE8E-B55F4D672716"
+                             id="BPMNEdge_sid-FA1E0F75-8908-460D-BE8E-B55F4D672716"
+                             flowable:sourceDockerX="15.0" flowable:sourceDockerY="15.0"
+                             flowable:targetDockerX="49.999999999999986"
+                             flowable:targetDockerY="40.0">
+                <omgdi:waypoint x="104.94999659487134" y="174.99998755430056"></omgdi:waypoint>
+                <omgdi:waypoint x="164.99999474430012" y="174.99999215006855"></omgdi:waypoint>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="sid-B52FBC11-5304-41CE-9997-0B3CE84F5666"
+                             id="BPMNEdge_sid-B52FBC11-5304-41CE-9997-0B3CE84F5666"
+                             flowable:sourceDockerX="49.999999999999986"
+                             flowable:sourceDockerY="40.0" flowable:targetDockerX="14.0"
+                             flowable:targetDockerY="14.0">
+                <omgdi:waypoint x="264.9499950825632" y="174.99999396064712"></omgdi:waypoint>
+                <omgdi:waypoint x="319.99999030182147" y="174.99999174098795"></omgdi:waypoint>
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>

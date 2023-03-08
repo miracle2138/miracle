@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:flowable="http://flowable.org/bpmn"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             typeLanguage="http://www.w3.org/2001/XMLSchema"
+             expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="Examples"
+             exporter="Flowable Open Source Modeler" exporterVersion="6.8.0">
+    <process id="second_key" name="第二个流程" isExecutable="true">
+        <startEvent id="startEvent1" flowable:formFieldValidation="true"></startEvent>
+        <sequenceFlow id="sid-866DEB47-E7ED-4D18-BE73-EF8B4DC5AD17" sourceRef="startEvent1"
+                      targetRef="sid-D26719DB-E1FB-4940-ACEF-DACAC88DDE10"></sequenceFlow>
+        <userTask id="sid-D26719DB-E1FB-4940-ACEF-DACAC88DDE10" name="第一个任务" flowable:assignee="ly"
+                  flowable:formFieldValidation="true">
+            <extensionElements>
+                <flowable:taskListener event="complete" class="com.liyao.MyTaskCreateListener">
+                    <flowable:field name="f1">
+                        <flowable:string><![CDATA[v1]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="f2">
+                        <flowable:string><![CDATA[v2]]></flowable:string>
+                    </flowable:field>
+                </flowable:taskListener>
+                <modeler:initiator-can-complete xmlns:modeler="http://flowable.org/modeler">
+                    <![CDATA[false]]></modeler:initiator-can-complete>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="sid-969F97A6-308C-4B3A-8FF1-62A287F429B5"
+                      sourceRef="sid-A1A988D3-1731-4023-A246-8F9863E51166"
+                      targetRef="sid-EEDF8609-F279-4144-B325-D7B4ADF4AAC6"></sequenceFlow>
+        <userTask id="sid-A1A988D3-1731-4023-A246-8F9863E51166" name="第二个任务" flowable:assignee="lzy"
+                  flowable:formFieldValidation="true">
+            <extensionElements>
+                <flowable:taskListener event="create"
+                                       class="com.liyao.MyTaskCreateListener"></flowable:taskListener>
+                <modeler:initiator-can-complete xmlns:modeler="http://flowable.org/modeler">
+                    <![CDATA[false]]></modeler:initiator-can-complete>
+            </extensionElements>
+        </userTask>
+        <sequenceFlow id="sid-9574C81B-A678-4F81-94F2-822F7052C972"
+                      sourceRef="sid-D26719DB-E1FB-4940-ACEF-DACAC88DDE10"
+                      targetRef="sid-A1A988D3-1731-4023-A246-8F9863E51166"></sequenceFlow>
+        <endEvent id="sid-EEDF8609-F279-4144-B325-D7B4ADF4AAC6"></endEvent>
+    </process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_second_key">
+        <bpmndi:BPMNPlane bpmnElement="second_key" id="BPMNPlane_second_key">
+            <bpmndi:BPMNShape bpmnElement="startEvent1" id="BPMNShape_startEvent1">
+                <omgdc:Bounds height="30.0" width="30.0" x="0.0" y="15.0"></omgdc:Bounds>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="sid-D26719DB-E1FB-4940-ACEF-DACAC88DDE10"
+                              id="BPMNShape_sid-D26719DB-E1FB-4940-ACEF-DACAC88DDE10">
+                <omgdc:Bounds height="60.0" width="100.0" x="80.0" y="0.0"></omgdc:Bounds>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="sid-A1A988D3-1731-4023-A246-8F9863E51166"
+                              id="BPMNShape_sid-A1A988D3-1731-4023-A246-8F9863E51166">
+                <omgdc:Bounds height="60.0" width="100.0" x="230.0" y="0.0"></omgdc:Bounds>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="sid-EEDF8609-F279-4144-B325-D7B4ADF4AAC6"
+                              id="BPMNShape_sid-EEDF8609-F279-4144-B325-D7B4ADF4AAC6">
+                <omgdc:Bounds height="28.0" width="28.0" x="380.0" y="15.0"></omgdc:Bounds>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge bpmnElement="sid-969F97A6-308C-4B3A-8FF1-62A287F429B5"
+                             id="BPMNEdge_sid-969F97A6-308C-4B3A-8FF1-62A287F429B5"
+                             flowable:sourceDockerX="50.0" flowable:sourceDockerY="30.0"
+                             flowable:targetDockerX="14.0" flowable:targetDockerY="14.0">
+                <omgdi:waypoint x="329.95000000000005" y="30.0"></omgdi:waypoint>
+                <omgdi:waypoint x="342.0" y="30.0"></omgdi:waypoint>
+                <omgdi:waypoint x="342.0" y="30.0"></omgdi:waypoint>
+                <omgdi:waypoint x="380.0025321198765" y="29.268220825690175"></omgdi:waypoint>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="sid-9574C81B-A678-4F81-94F2-822F7052C972"
+                             id="BPMNEdge_sid-9574C81B-A678-4F81-94F2-822F7052C972"
+                             flowable:sourceDockerX="50.0" flowable:sourceDockerY="30.0"
+                             flowable:targetDockerX="50.0" flowable:targetDockerY="30.0">
+                <omgdi:waypoint x="179.95" y="30.0"></omgdi:waypoint>
+                <omgdi:waypoint x="192.0" y="30.0"></omgdi:waypoint>
+                <omgdi:waypoint x="192.0" y="30.000000000000007"></omgdi:waypoint>
+                <omgdi:waypoint x="229.99999999999042" y="30.000000000000007"></omgdi:waypoint>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="sid-866DEB47-E7ED-4D18-BE73-EF8B4DC5AD17"
+                             id="BPMNEdge_sid-866DEB47-E7ED-4D18-BE73-EF8B4DC5AD17"
+                             flowable:sourceDockerX="15.0" flowable:sourceDockerY="15.0"
+                             flowable:targetDockerX="50.0" flowable:targetDockerY="30.0">
+                <omgdi:waypoint x="29.949975004446717" y="30.0"></omgdi:waypoint>
+                <omgdi:waypoint x="42.0" y="30.0"></omgdi:waypoint>
+                <omgdi:waypoint x="42.0" y="30.000000000000007"></omgdi:waypoint>
+                <omgdi:waypoint x="79.99999999999042" y="30.000000000000007"></omgdi:waypoint>
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>

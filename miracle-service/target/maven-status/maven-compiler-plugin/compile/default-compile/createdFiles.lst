@@ -1,5 +1,6 @@
 com\liyao\miracle\config\MyBatisPlusConfig.class
 com\jssgwl\data\abroad\constant\BuildType.class
+com\liyao\miracle\Test.class
 com\liyao\miracle\user\dao\UserMapper.class
 com\liyao\miracle\json\JsonUtils.class
 com\liyao\miracle\plan\dao\PlanDao.class
