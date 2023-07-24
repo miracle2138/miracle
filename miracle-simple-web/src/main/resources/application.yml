@@ -1,0 +1,13 @@
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+server:
+  servlet:
+    context-path: /api
+  port: 8082
